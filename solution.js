@@ -26,7 +26,6 @@ app.get("/", async (req, res) => {
   try {
     const result = await db.query("SELECT * FROM items ORDER BY id ASC");
     items = result.rows;
-
     res.render("index.ejs", {
       listTitle: "Today",
       listItems: items,
